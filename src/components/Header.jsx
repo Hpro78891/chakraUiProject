@@ -1,13 +1,21 @@
-import React from 'react'
-import {Drawer,DrawerBody,DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,DrawerCloseButton,
-    Button,useDisclosure,VStack, HStack} from '@chakra-ui/react'
-import {Link} from "react-router-dom";
-import {BiMenuAltLeft} from "react-icons/bi"
+import React from 'react';
+import {
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Button,
+  useDisclosure,
+  VStack,
+  HStack,
+} from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import { BiMenuAltLeft } from 'react-icons/bi';
 const Header = () => {
-      const { isOpen, onOpen, onClose } = useDisclosure();
-      const btnRef = React.useRef();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
   return (
     <>
       <Button
@@ -20,6 +28,7 @@ const Header = () => {
         w={'10'}
         borderRadius={'full'}
         ref={btnRef}
+        zIndex={'overlay'}
         onClick={onOpen}
       >
         <BiMenuAltLeft size={'20'} />
@@ -92,6 +101,6 @@ const Header = () => {
       </Drawer>
     </>
   );
-}
+};
 
-export default Header
+export default Header;
